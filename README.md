@@ -60,10 +60,12 @@ Após configurar o ambiente, você pode acessar a aplicação Laravel no navegad
 URL da aplicação: http://localhost:8080
 
 #### Swagger
+
 Você pode acessar a documentação da API gerada pelo Swagger em:
 
 http://localhost:8080/api/documentation
 
 ### Estrutura do Projeto
+
 laravel.test: Serviço principal da aplicação Laravel.
 postgres: Serviço de banco de dados PostgreSQL.
