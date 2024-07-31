@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "88e325be-f9c5-41c8-a222-a4b55d8d3c69",
+		"name": "Api teste backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36630575"
+	},
+	"item": [
+		{
+			"name": "criar estrategiaWMS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dsEstrategia\": \"RETIRA\",\n  \"nrPrioridade\": 10,\n  \"horarios\": [\n    {\n      \"dsHorarioInicio\": \"09:00\",\n      \"dsHorarioFinal\": \"10:00\",\n      \"nrPrioridade\": 40\n    },\n    {\n      \"dsHorarioInicio\": \"10:01\",\n      \"dsHorarioFinal\": \"11:00\",\n      \"nrPrioridade\": 30\n    },\n    {\n      \"dsHorarioInicio\": \"11:01\",\n      \"dsHorarioFinal\": \"12:00\",\n      \"nrPrioridade\": 20\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/estrategiaWMS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estrategiaWMS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "busca de estrategiaWMS prioridade",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/estrategiaWMS/6/09/30/prioridade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estrategiaWMS",
+						"6",
+						"09",
+						"30",
+						"prioridade"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

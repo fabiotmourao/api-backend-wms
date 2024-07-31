@@ -1,0 +1,98 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Estratégia WMS",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/estrategiaWMS": {
+            "post": {
+                "summary": "Cria uma nova estratégia",
+                "operationId": "b27e46f6c3897353d0b165d984555d27",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "dsEstrategia": {
+                                        "type": "string"
+                                    },
+                                    "nrPrioridade": {
+                                        "type": "integer"
+                                    },
+                                    "horarios": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "dsHorarioInicio": {
+                                                    "type": "string"
+                                                },
+                                                "dsHorarioFinal": {
+                                                    "type": "string"
+                                                },
+                                                "nrPrioridade": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Dados salvos com sucesso"
+                    },
+                    "422": {
+                        "description": "Erro de validação"
+                    }
+                }
+            }
+        },
+        "/api/estrategiaWMS/{cdEstrategia}/{dsHora}/{dsMinuto}/prioridade": {
+            "get": {
+                "summary": "Obtém a prioridade com base na hora e minuto informados",
+                "operationId": "adecf032eb668fb3a158dab2b6b10d1c",
+                "parameters": [
+                    {
+                        "name": "cdEstrategia",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "dsHora",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "dsMinuto",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Prioridade retornada com sucesso"
+                    },
+                    "404": {
+                        "description": "Estratégia não encontrada"
+                    }
+                }
+            }
+        }
+    }
+}
