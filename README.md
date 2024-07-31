@@ -11,7 +11,7 @@ Este projeto é uma aplicação Laravel 10 utilizando o PostgreSQL como banco de
 
 Clonar o repositório
 
-        git clone <URL_DO_REPOSITORIO>
+        git clone git@github.com:fabiotmourao/api-backend-wms.git
         cd <NOME_DO_PROJETO>
 
 ## Configurar o arquivo .env
